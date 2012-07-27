@@ -132,6 +132,7 @@ describe "User pages" do
           sign_in admin
           visit users_path
         end
+        
         it { should have_link('delete', href: user_path(User.first)) }
         it "should be able to delete another user" do
           expect { click_link('delete') }.to change(User, :count).by(-1)
